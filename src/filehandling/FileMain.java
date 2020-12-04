@@ -31,13 +31,12 @@ public class FileMain {
 				FileHandling.DisplayFile(TESTFILE);
 				break;
 			case "3":
-				
 				FileHandling.AppendFile(TESTFILE);
 				break;	
 			}
 			
 			FileHandling.SystemOptions();
-			choice = in.nextLine();
+			choice = in.next();
 		}
 
 	}

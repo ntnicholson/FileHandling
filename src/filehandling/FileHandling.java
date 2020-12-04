@@ -16,11 +16,12 @@ public class FileHandling {
 	
 	public static void SystemOptions() // Give User options
 	{
+		System.out.println();
 		System.out.println("1. [ Read File ]");
 		System.out.println("2. [ Display File ]");
-		System.out.println("3. [ Multiplication ]");
-		System.out.println("4. [ Division ]");
+		System.out.println("3. [ Append File ]");
 		System.out.println("5: { Close Application }");
+		System.out.println();
 	}
 
 	public static void ReadFile(String path, List<String> list) {
@@ -31,10 +32,9 @@ public class FileHandling {
 			
 			String line;
 			
-			while ((line = br.readLine()) != null) {
+			while ((line = br.readLine()) != null) 
+			{
 				list.add(line); // Store for future use
-				//line = br.readLine();
-				// line = br.
 			}
 
 			br.close();
@@ -71,8 +71,10 @@ public class FileHandling {
 		
 		try {
 			BufferedWriter br = new BufferedWriter(new FileWriter(path, true));
+			br.newLine();
 			br.write(appendText);
-			
+			br.close();	
+			System.out.println("File appended");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,6 +84,9 @@ public class FileHandling {
 	{
 		Scanner input = new Scanner(System.in);
 		String appendText = null;
+		
+		System.out.println("Input the text you would liike to add to the file.");
+		appendText = input.nextLine();
 		
 		input.close();
 		
