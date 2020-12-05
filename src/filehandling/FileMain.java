@@ -35,6 +35,9 @@ public class FileMain {
 			}
 			
 		}while (choice != '5');
+		
+		System.out.println("Goodbye");
+		System.exit(0);
 
 	}
 
