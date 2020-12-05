@@ -17,6 +17,8 @@ public class FileHandling {
 	public static void SystemOptions() // Give User options
 	{
 		System.out.println();
+		System.out.println("Select an option: ");
+		System.out.println();
 		System.out.println("1. [ Read File ]");
 		System.out.println("2. [ Display File ]");
 		System.out.println("3. [ Append File ]");
@@ -59,10 +61,10 @@ public class FileHandling {
 			}
 
 			br.close();
-			System.out.println("Success: File read");
+			System.out.println("Success: File Displayed.");
 
 		} catch (IOException e) {
-			System.out.println("Failure: Unable to read file.");
+			System.out.println("Failure: Unable to display file.");
 		}
 	}
 	public static void AppendFile(String path) 
@@ -87,8 +89,6 @@ public class FileHandling {
 		
 		System.out.println("Input the text you would liike to add to the file.");
 		appendText = input.nextLine();
-		
-		input.close();
 		
 		return appendText;
 	}
